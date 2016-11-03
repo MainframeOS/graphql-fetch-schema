@@ -10,7 +10,8 @@
     "clean": "rm -rf ./lib",
     "compile": "babel src --out-dir lib",
     "build": "npm run clean && npm run compile",
-    "start": "npm run compile"
+    "start": "npm run compile",
+    "prepublish": "npm ls && npm start"
   },
   "author": "Paul Le Cam <paul@mainframe.com>",
   "license": "MIT",
