@@ -21,10 +21,12 @@ program
   .option('-g, --graphql', 'write schema.graphql file')
   .option('-j, --json', 'write schema.json file')
   .option('-o, --output <directory>', 'write to specified directory')
+  .option('-s, --sort', 'sort field keys')
   .parse(process.argv)
 
 run(program.args[0], {
   graphql: !!program.graphql,
   json: !!program.json,
   outputPath: program.output,
+  sort: !!program.sort,
 })
