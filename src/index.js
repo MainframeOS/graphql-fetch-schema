@@ -69,13 +69,11 @@ const sortInputObject = (type: object) => {
   return type
 }
 
-
 const sortArgs = (field: object) => {
   field.args = field.args
     .sort((arg1, arg2) => arg1.name.localeCompare(arg2.name))
   return field
 }
-
 
 export default async (url: string, options: Options = {}) => {
   // If no option is set, consider it's all
