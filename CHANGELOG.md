@@ -1,3 +1,7 @@
+## v0.3.0 (2016-11-29)
+
+Add `sort` option to sort fields keys
+
 ## v0.2.0 (2016-11-14)
 
 Update GraphQL to v0.8.1

@@ -16,7 +16,7 @@ const run = async (url: string, options: Object) => {
 }
 
 program
-  .version('0.1.0')
+  .version('0.3.0')
   .usage('<url> [options]')
   .option('-g, --graphql', 'write schema.graphql file')
   .option('-j, --json', 'write schema.json file')

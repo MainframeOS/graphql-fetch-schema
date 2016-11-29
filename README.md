@@ -22,6 +22,7 @@ graphql-fetch-schema <url> [options]
 -g, --graphql             write schema.graphql file
 -j, --json                write schema.json file
 -o, --output <directory>  write to specified directory
+-s, --sort                sort field keys
 ```
 
 ### API usage
