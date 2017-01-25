@@ -1,6 +1,6 @@
 {
   "name": "graphql-fetch-schema",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Fetch a GraphQL schema from a server and write it to file",
   "repository": {
     "type": "git",
@@ -14,22 +14,22 @@
     "clean": "rm -rf ./lib",
     "compile": "babel src --out-dir lib",
     "build": "npm run clean && npm run compile",
-    "start": "npm run compile",
+    "start": "npm run build",
     "prepublish": "npm ls && npm start"
   },
   "author": "Paul Le Cam <paul@mainframe.com>",
   "license": "MIT",
   "dependencies": {
-    "babel-runtime": "^6.18.0",
+    "babel-runtime": "^6.22.0",
     "commander": "^2.9.0",
-    "graphql": "^0.8.1",
+    "graphql": "^0.9.0",
     "node-fetch": "^1.6.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
+    "babel-cli": "^6.22.2",
     "babel-plugin-syntax-flow": "^6.18.0",
-    "babel-plugin-transform-flow-strip-types": "^6.18.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-latest": "^6.16.0"
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0"
   }
 }
