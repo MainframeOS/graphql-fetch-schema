@@ -19,6 +19,7 @@ program
   .version('0.4.0')
   .usage('<url> [options]')
   .option('-g, --graphql', 'write schema.graphql file')
+  .option('-c, --cookie <cookie>', 'pass additional Cookie header')
   .option('-j, --json', 'write schema.json file')
   .option('-o, --output <directory>', 'write to specified directory')
   .option('-s, --sort', 'sort field keys')
@@ -28,5 +29,6 @@ run(program.args[0], {
   graphql: !!program.graphql,
   json: !!program.json,
   outputPath: program.output,
+  cookie: program.cookie,
   sort: !!program.sort,
 })

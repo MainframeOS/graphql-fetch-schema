@@ -21,6 +21,7 @@ graphql-fetch-schema <url> [options]
 -V, --version             output the version number
 -g, --graphql             write schema.graphql file
 -j, --json                write schema.json file
+-c, --cookie                pass additional Cookie header
 -o, --output <directory>  write to specified directory
 -s, --sort                sort field keys
 ```
@@ -34,6 +35,7 @@ fetchSchema('https://api.myserver.com/graphql', {
   json: true,
   graphql: false,
   outputPath: '../schema',
+  cookie: 'cookiename=foo;',
 })
 .then(() => {
   console.log('Schema successfully written')
