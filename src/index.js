@@ -83,15 +83,14 @@ export default async (url: string, options: Options = {}) => {
     options.json = true
   }
   const pathPrefix = options.outputPath || './'
+
   const headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
   }
-
   if (options.cookie) {
     headers['Cookie'] = options.cookie
   }
-
 
   const res = await fetch(url, {
     method: 'POST',

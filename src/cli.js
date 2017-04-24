@@ -16,7 +16,7 @@ const run = async (url: string, options: Object) => {
 }
 
 program
-  .version('0.4.0')
+  .version('0.5.0')
   .usage('<url> [options]')
   .option('-g, --graphql', 'write schema.graphql file')
   .option('-c, --cookie <cookie>', 'pass additional Cookie header')

@@ -19,9 +19,9 @@ graphql-fetch-schema <url> [options]
 ```
 -h, --help                output usage information
 -V, --version             output the version number
+-c, --cookie              pass additional Cookie header
 -g, --graphql             write schema.graphql file
 -j, --json                write schema.json file
--c, --cookie                pass additional Cookie header
 -o, --output <directory>  write to specified directory
 -s, --sort                sort field keys
 ```

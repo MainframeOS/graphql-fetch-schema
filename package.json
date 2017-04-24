@@ -1,6 +1,6 @@
 {
   "name": "graphql-fetch-schema",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Fetch a GraphQL schema from a server and write it to file",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "compile": "babel src --out-dir lib",
     "build": "npm run clean && npm run compile",
     "start": "npm run build",
-    "prepublish": "npm ls && npm start"
+    "prepublish": "npm start"
   },
   "author": "Paul Le Cam <paul@mainframe.com>",
   "license": "MIT",
