@@ -1,3 +1,7 @@
+## v0.6.0 (2017-05-26)
+
+Update GraphQL to v0.10.0
+
 ## v0.5.0 (2017-04-24)
 
 Add `cookie` option, [PR #2](https://github.com/thusfresh/graphql-fetch-schema/pull/2) by [securingsincity](https://github.com/securingsincity)
