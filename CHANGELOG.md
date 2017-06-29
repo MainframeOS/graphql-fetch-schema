@@ -1,3 +1,7 @@
+## v0.6.1 (2017-06-29)
+
+Fix version
+
 ## v0.6.0 (2017-05-26)
 
 Update GraphQL to v0.10.0

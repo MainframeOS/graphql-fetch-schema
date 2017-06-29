@@ -2,6 +2,7 @@
 
 import program from 'commander'
 
+import pckg from '../package.json'
 import fetchSchema from './index'
 
 const run = async (url: string, options: Object) => {
@@ -16,7 +17,7 @@ const run = async (url: string, options: Object) => {
 }
 
 program
-  .version('0.5.0')
+  .version(pckg.version)
   .usage('<url> [options]')
   .option('-g, --graphql', 'write schema.graphql file')
   .option('-c, --cookie <cookie>', 'pass additional Cookie header')

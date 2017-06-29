@@ -16,9 +16,15 @@ type Options = {
   cookie?: string,
 }
 
-const writeFile = ({filePath, contents}: {filePath: string, contents: string}) => {
+const writeFile = ({
+  filePath,
+  contents,
+}: {
+  filePath: string,
+  contents: string,
+}) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(filePath, contents, (err) => {
+    fs.writeFile(filePath, contents, err => {
       if (err) reject(err)
       else resolve()
     })
@@ -40,12 +46,13 @@ const sortType = (type: object) => {
     return type
   }
 
-  throw new Error("Unknown kind")
+  throw new Error('Unknown kind')
 }
 
 const sortObject = (type: object) => {
-  type.interfaces = type.interfaces
-    .sort((int1, int2) => int1.name.localeCompare(int2.name))
+  type.interfaces = type.interfaces.sort((int1, int2) =>
+    int1.name.localeCompare(int2.name),
+  )
   type.fields = type.fields
     .sort((field1, field2) => field1.name.localeCompare(field2.name))
     .map(sortArgs)
@@ -53,26 +60,30 @@ const sortObject = (type: object) => {
 }
 
 const sortInterface = (type: object) => {
-  type.fields = type.fields
-    .sort((field1, field2) => field1.name.localeCompare(field2.name))
+  type.fields = type.fields.sort((field1, field2) =>
+    field1.name.localeCompare(field2.name),
+  )
   return type
 }
 
 const sortEnum = (type: object) => {
-  type.enumValues = type.enumValues
-    .sort((value1, value2) => value1.name.localeCompare(value2.name))
+  type.enumValues = type.enumValues.sort((value1, value2) =>
+    value1.name.localeCompare(value2.name),
+  )
   return type
 }
 
 const sortInputObject = (type: object) => {
-  type.inputFields = type.inputFields
-    .sort((field1,field2) => field1.name.localeCompare(field2.name))
+  type.inputFields = type.inputFields.sort((field1, field2) =>
+    field1.name.localeCompare(field2.name),
+  )
   return type
 }
 
 const sortArgs = (field: object) => {
-  field.args = field.args
-    .sort((arg1, arg2) => arg1.name.localeCompare(arg2.name))
+  field.args = field.args.sort((arg1, arg2) =>
+    arg1.name.localeCompare(arg2.name),
+  )
   return field
 }
 
@@ -85,7 +96,7 @@ export default async (url: string, options: Options = {}) => {
   const pathPrefix = options.outputPath || './'
 
   const headers = {
-    'Accept': 'application/json',
+    Accept: 'application/json',
     'Content-Type': 'application/json',
   }
   if (options.cookie) {
