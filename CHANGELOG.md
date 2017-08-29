@@ -1,3 +1,11 @@
+## v0.7.1 (2017-08-29)
+
+Fix exporting the binary
+
+## v0.7.0 (2017-08-29)
+
+Update GraphQL to v0.11.2
+
 ## v0.7.0 (2017-08-29)
 
 Update GraphQL to v0.11.2
