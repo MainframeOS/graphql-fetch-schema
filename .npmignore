@@ -1,3 +1,4 @@
 .babelrc
+.flowconfig
 src
 CHANGELOG.md

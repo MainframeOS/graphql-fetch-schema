@@ -26,7 +26,7 @@ graphql-fetch-schema <url> [options]
 -s, --sort                sort field keys
 ```
 
-### API usage
+## API usage
 
 ```js
 import fetchSchema from 'graphql-fetch-schema'

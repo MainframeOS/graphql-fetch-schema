@@ -31,7 +31,7 @@ const writeFile = ({
   })
 }
 
-const sortType = (type: object) => {
+const sortType = (type: Object) => {
   if (type['kind'] === 'OBJECT') {
     return sortObject(type)
   } else if (type['kind'] === 'INTERFACE') {
@@ -49,7 +49,7 @@ const sortType = (type: object) => {
   throw new Error('Unknown kind')
 }
 
-const sortObject = (type: object) => {
+const sortObject = (type: Object) => {
   type.interfaces = type.interfaces.sort((int1, int2) =>
     int1.name.localeCompare(int2.name),
   )
@@ -59,28 +59,28 @@ const sortObject = (type: object) => {
   return type
 }
 
-const sortInterface = (type: object) => {
+const sortInterface = (type: Object) => {
   type.fields = type.fields.sort((field1, field2) =>
     field1.name.localeCompare(field2.name),
   )
   return type
 }
 
-const sortEnum = (type: object) => {
+const sortEnum = (type: Object) => {
   type.enumValues = type.enumValues.sort((value1, value2) =>
     value1.name.localeCompare(value2.name),
   )
   return type
 }
 
-const sortInputObject = (type: object) => {
+const sortInputObject = (type: Object) => {
   type.inputFields = type.inputFields.sort((field1, field2) =>
     field1.name.localeCompare(field2.name),
   )
   return type
 }
 
-const sortArgs = (field: object) => {
+const sortArgs = (field: Object) => {
   field.args = field.args.sort((arg1, arg2) =>
     arg1.name.localeCompare(arg2.name),
   )
@@ -95,7 +95,7 @@ export default async (url: string, options: Options = {}) => {
   }
   const pathPrefix = options.outputPath || './'
 
-  const headers = {
+  const headers: Object = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   }

@@ -1,8 +1,13 @@
 {
-  "presets": ["latest"],
-  "plugins": [
-    "syntax-flow",
-    "transform-flow-strip-types",
-    "transform-runtime"
-  ]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "node": 4
+        }
+      }
+    ]
+  ],
+  "plugins": ["syntax-flow", "transform-flow-strip-types", "transform-runtime"]
 }
