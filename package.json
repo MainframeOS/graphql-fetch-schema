@@ -1,6 +1,6 @@
 {
   "name": "graphql-fetch-schema",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Fetch a GraphQL schema from a server and write it to file",
   "repository": {
     "type": "git",
