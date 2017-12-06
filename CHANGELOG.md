@@ -1,3 +1,7 @@
+## v0.7.2 (2017-12-06)
+
+Update repository URL
+
 ## v0.7.1 (2017-08-29)
 
 Fix exporting the binary
