@@ -1,11 +1,7 @@
 // @flow
 
-import {
-  buildClientSchema,
-  introspectionQuery,
-  printSchema,
-} from 'graphql/utilities'
 import fs from 'fs'
+import { buildClientSchema, getIntrospectionQuery, printSchema } from 'graphql'
 import fetch from 'node-fetch'
 import path from 'path'
 
@@ -31,62 +27,6 @@ const writeFile = ({
   })
 }
 
-const sortType = (type: Object) => {
-  if (type['kind'] === 'OBJECT') {
-    return sortObject(type)
-  } else if (type['kind'] === 'INTERFACE') {
-    return sortInterface(type)
-  } else if (type['kind'] === 'ENUM') {
-    return sortEnum(type)
-  } else if (type['kind'] === 'INPUT_OBJECT') {
-    return sortInputObject(type)
-  } else if (type['kind'] === 'UNION') {
-    return type
-  } else if (type.kind === 'SCALAR') {
-    return type
-  }
-
-  throw new Error('Unknown kind')
-}
-
-const sortObject = (type: Object) => {
-  type.interfaces = type.interfaces.sort((int1, int2) =>
-    int1.name.localeCompare(int2.name),
-  )
-  type.fields = type.fields
-    .sort((field1, field2) => field1.name.localeCompare(field2.name))
-    .map(sortArgs)
-  return type
-}
-
-const sortInterface = (type: Object) => {
-  type.fields = type.fields.sort((field1, field2) =>
-    field1.name.localeCompare(field2.name),
-  )
-  return type
-}
-
-const sortEnum = (type: Object) => {
-  type.enumValues = type.enumValues.sort((value1, value2) =>
-    value1.name.localeCompare(value2.name),
-  )
-  return type
-}
-
-const sortInputObject = (type: Object) => {
-  type.inputFields = type.inputFields.sort((field1, field2) =>
-    field1.name.localeCompare(field2.name),
-  )
-  return type
-}
-
-const sortArgs = (field: Object) => {
-  field.args = field.args.sort((arg1, arg2) =>
-    arg1.name.localeCompare(arg2.name),
-  )
-  return field
-}
-
 export default async (url: string, options: Options = {}) => {
   // If no option is set, consider it's all
   if (!options.graphql && !options.json) {
@@ -107,14 +47,10 @@ export default async (url: string, options: Options = {}) => {
     method: 'POST',
     headers: headers,
     body: JSON.stringify({
-      query: introspectionQuery,
+      query: getIntrospectionQuery(),
     }),
   })
   const schema = await res.json()
-  if (options.sort) {
-    const types = schema.data.__schema.types.map(sortType)
-    schema.data.__schema.types = types
-  }
 
   const files = []
   if (options.graphql) {

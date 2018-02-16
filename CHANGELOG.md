@@ -1,3 +1,8 @@
+## v0.8.0 (2018-02-15)
+
+* Update GraphQL to v0.13.1
+* Remove `sort` option as the schema is sorted by default
+
 ## v0.7.2 (2017-12-06)
 
 Update repository URL
@@ -5,10 +10,6 @@ Update repository URL
 ## v0.7.1 (2017-08-29)
 
 Fix exporting the binary
-
-## v0.7.0 (2017-08-29)
-
-Update GraphQL to v0.11.2
 
 ## v0.7.0 (2017-08-29)
 

@@ -23,7 +23,6 @@ graphql-fetch-schema <url> [options]
 -g, --graphql             write schema.graphql file
 -j, --json                write schema.json file
 -o, --output <directory>  write to specified directory
--s, --sort                sort field keys
 ```
 
 ## API usage
@@ -36,13 +35,14 @@ fetchSchema('https://api.myserver.com/graphql', {
   graphql: false,
   outputPath: '../schema',
   cookie: 'cookiename=foo;',
-})
-.then(() => {
-  console.log('Schema successfully written')
-})
-.catch((err) => {
-  console.error(err)
-})
+}).then(
+  () => {
+    console.log('Schema successfully written')
+  },
+  err => {
+    console.error(err)
+  },
+)
 ```
 
 ## License
