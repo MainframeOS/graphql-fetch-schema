@@ -1,7 +1,14 @@
+## v1.0.0 (2018-08-31)
+
+- Update GraphQL to v14
+- Update Babel to v7
+- Add spinner when using CLI
+- Drop support for node v4, as v6 is now the minimum version supported by GraphQL
+
 ## v0.8.0 (2018-02-15)
 
-* Update GraphQL to v0.13.1
-* Remove `sort` option as the schema is sorted by default
+- Update GraphQL to v0.13.1
+- Remove `sort` option as the schema is sorted by default
 
 ## v0.7.2 (2017-12-06)
 

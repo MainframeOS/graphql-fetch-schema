@@ -1,18 +1,19 @@
 // @flow
 
 import program from 'commander'
+import ora from 'ora'
 
 import pckg from '../package.json'
 import fetchSchema from './index'
 
 const run = async (url: string, options: Object) => {
+  const spinner = ora().start()
+
   try {
     const files = await fetchSchema(url, options)
-    files.forEach((file: Object) => {
-      console.log(file.filePath)
-    })
+    spinner.succeed(files.map((file: Object) => file.filePath).join(' '))
   } catch (err) {
-    console.error(err)
+    spinner.fail(err.message)
   }
 }
 

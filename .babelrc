@@ -1,13 +1,16 @@
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "targets": {
-          "node": 4
+          "node": 6
         }
       }
-    ]
+    ],
+    "@babel/preset-flow"
   ],
-  "plugins": ["syntax-flow", "transform-flow-strip-types", "transform-runtime"]
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
 }

@@ -1,19 +1,27 @@
 {
   "name": "graphql-fetch-schema",
-  "version": "0.7.2",
+  "version": "1.0.0",
   "description": "Fetch a GraphQL schema from a server and write it to file",
+  "keywords": [
+    "graphql",
+    "schema"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/MainframeHQ/graphql-fetch-schema.git"
   },
   "author": "Mainframe",
   "license": "MIT",
+  "files": [
+    "bin/*",
+    "lib/*"
+  ],
   "main": "lib/index.js",
   "bin": {
     "graphql-fetch-schema": "./bin/graphql-fetch-schema"
   },
   "scripts": {
-    "clean": "rm -rf ./lib",
+    "clean": "del ./lib",
     "compile": "babel src --out-dir lib",
     "build": "npm run clean && npm run compile",
     "flow": "flow check",
@@ -22,18 +30,20 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
-    "commander": "^2.14.1",
-    "graphql": "^0.13.1",
-    "node-fetch": "^2.0.0"
+    "@babel/runtime": "^7.0.0",
+    "commander": "^2.17.1",
+    "graphql": "^14.0.0",
+    "node-fetch": "^2.2.0",
+    "ora": "^3.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-syntax-flow": "^6.18.0",
-    "babel-plugin-transform-flow-strip-types": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-env": "^1.6.1",
-    "flow-bin": "^0.65.0",
-    "prettier": "^1.10.2"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "del-cli": "^1.1.0",
+    "flow-bin": "^0.79.1",
+    "prettier": "^1.14.2"
   }
 }
