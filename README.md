@@ -35,6 +35,9 @@ fetchSchema('https://api.myserver.com/graphql', {
   graphql: false,
   outputPath: '../schema',
   cookie: 'cookiename=foo;',
+  headers: {
+    Authorization: 'Bearer token'
+  }
 }).then(
   () => {
     console.log('Schema successfully written')
