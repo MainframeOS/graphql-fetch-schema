@@ -1,3 +1,7 @@
+## v1.1.0 (2019-01-10)
+
+Add `headers` option, [PR #4](https://github.com/MainframeHQ/graphql-fetch-schema/pull/4/files) by [BkunS](https://github.com/BkunS)
+
 ## v1.0.0 (2018-08-31)
 
 - Update GraphQL to v14
@@ -32,7 +36,7 @@ Update GraphQL to v0.10.0
 
 ## v0.5.0 (2017-04-24)
 
-Add `cookie` option, [PR #2](https://github.com/thusfresh/graphql-fetch-schema/pull/2) by [securingsincity](https://github.com/securingsincity)
+Add `cookie` option, [PR #2](https://github.com/MainframeHQ/graphql-fetch-schema/pull/2) by [securingsincity](https://github.com/securingsincity)
 
 ## v0.4.0 (2017-01-25)
 
