@@ -10,6 +10,7 @@ type Options = {
   json?: boolean,
   outputPath?: string,
   cookie?: string,
+  headers?: Object
 }
 
 const writeFile = ({
@@ -35,10 +36,10 @@ export default async (url: string, options: Options = {}) => {
   }
   const pathPrefix = options.outputPath || './'
 
-  const headers: Object = {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  }
+  const headers: Object = options.headers ? options.headers : {}
+  headers['Accept'] = headers['Accept'] ? headers['Accept'] : 'application/json'
+  headers['Content-Type'] = headers['Content-Type'] ? headers['Content-Type'] : 'application/json'
+
   if (options.cookie) {
     headers['Cookie'] = options.cookie
   }
